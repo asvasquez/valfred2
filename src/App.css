@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+  background: cadetblue;
+
+}
+
+.App-logo {
+  position: absolute;
+  width: 250px;
+  height: 30vmin;
+  pointer-events: none;
+  left: calc(50% -25px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* * */
+.Nav{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+}
+.d-flex{
+  display: flex;
+  flex-direction: row;
+  text-align: end;
+  height: 40px;
+}
+
+.logovalfred{
+  width: 500px;
+  height: 100px;
+}
+.carrito{
+  height: 35px;
+  width: 25%;
+}
+
+header {
+  padding: 1rem 0;
+}
+
+.main-content {
+  margin-top: 2rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.product-detail {
+  padding: 0 2rem;
+}
+
+.product-price {
+
+  text-align: right;
+  font-weight: bold;
+  font-size: 140%;
+}
