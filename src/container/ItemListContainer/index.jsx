@@ -6,8 +6,8 @@ import { CartContext } from "../../context/CartContext";
 
 export const ItemListContainer = () =>{
     const [list, setList] = useState([]);
-    const {listProducts, cart, setCart} = useContext(CartContext)
-    const {CartComponent} = useContext(CartContext)
+    const {listProducts, cart, setCart, cambiarStock} = useContext(CartContext)
+    // const {CartComponent} = useContext(CartContext)
     const {categoryId} = useParams()
     
     function addCart(product){
@@ -19,9 +19,9 @@ export const ItemListContainer = () =>{
             }else{
             setCart([...cart, product])
             }
-        }else(
+        }else{
             setCart([...cart, product])
-        )
+        }
     let total = 0;
     cart.forEach(element => {
         total = total + (element.cantidad * element.price)
@@ -42,6 +42,13 @@ export const ItemListContainer = () =>{
         const array = listProducts.filter(producto => producto.categoryId === categoryId)
         setList(array);
     }
+    function Example() {
+        return(list.map(producto=>{
+            return<ItemComponent addToCart={addCart} key={producto.id} id={producto.id} title={producto.title} categoryId={producto.categoryId} image={producto.image} description={producto.description} stock={producto.stock} price={producto.price} updateStock={cambiarStock}/>
+        }))
+        
+    }
+
     return <div>
         <div>
             <button onClick={()=>{FiltrarProductos("faja")}}>Fajas</button>
@@ -50,9 +57,6 @@ export const ItemListContainer = () =>{
             <button onClick={()=>{FiltrarProductos("rodillera")}}>Rodilleras</button>
             <button onClick={()=>{FiltrarProductos("talonera")}}>Talonera</button>
         </div>
-        {list.map(producto =>{
-            return<ItemComponent addToCart={addCart} key={producto.id} id={producto.id} title={producto.title} categoryId={producto.categoryId} image={producto.image} description={producto.description} stock={producto.stock} price={producto.price}/>
-        })}
-        
+        <Example/>        
     </div>
 }
