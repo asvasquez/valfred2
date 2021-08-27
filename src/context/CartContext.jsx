@@ -14,7 +14,7 @@ export const persistentCart = () => {
   
 export const CartProvider = ({children}) => {
 
-    const [cart, setCart] = useState();    
+    const [cart, setCart] = useState([]);    
     const [listProducts, setListProducts] = useState([]);
     // console.log(cart)
 
