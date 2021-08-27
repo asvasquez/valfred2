@@ -48,7 +48,6 @@ export const ItemListContainer = () =>{
         }))
         
     }
-
     return <div>
         <div>
             <button onClick={()=>{FiltrarProductos("faja")}}>Fajas</button>
